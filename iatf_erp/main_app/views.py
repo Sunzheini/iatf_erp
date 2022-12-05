@@ -15,4 +15,10 @@ def process_map(request):
 
 
 def process_description(request, process_id):
-    return HttpResponse(f"Process Description of {process_id}")
+    context = {
+        'process_id': process_id,
+        'my_info': [1, 2, 3],
+    }
+    return render(request, 'base.html', context)
+
+
